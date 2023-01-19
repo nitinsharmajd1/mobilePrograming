@@ -1,0 +1,16 @@
+import 'dart:math';
+void main(){
+
+ List<List<int>> create2DList(int numberOfRows, int numberOfColumns) {
+  var random = Random();
+  return List.generate(numberOfRows, (_) =>
+      List.generate(numberOfColumns, (_) => random.nextInt(101)));
+}
+  
+List<List<int>> sort2DList(List<List<int>> list2D, int columnIndex) {
+  return list2D..sort((a, b) => a[columnIndex].compareTo(b[columnIndex]));
+}
+print(create2DList(18, 3));
+print(sort2DList([[1,8,6],[6,3,5]], 2));
+
+}
